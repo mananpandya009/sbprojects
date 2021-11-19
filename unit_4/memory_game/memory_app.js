@@ -5,11 +5,9 @@ var div_color = ""
 let card1_isclicked = false;
 let card2_isclicked = false;
 let card_1 = null;
-let card1_color = "";
 let card_2 = null;
-let card2_color = "";
-let card_clicked = null;
 let cards_matched = 0;
+let any_card_clicked = false;
 
 const COLORS = [
   "red",
@@ -75,47 +73,35 @@ function createDivsForColors(colorArray) {
 
 function handleCardClick(e){
 
-
+    if(any_card_clicked) return;
     if(e.target.classList.contains("clicked")){
         console.log("already clicked, returning")
+        return;
     }
 
-    card_clicked = e.target;
-    card_clicked.style.background = card_clicked.classList[0];
+    let currentcard_clicked = e.target;
+    currentcard_clicked.style.background = currentcard_clicked.classList[0];
     if(card_1 === null || card_2 === null){
-
-        if(card_1 === null && !card1_isclicked ){
-            card_1 = card_clicked;
-            card1_color = card_clicked.classList[0];
-            card_clicked.classList.add("clicked");
-            console.log(card_clicked.classList);
-            console.log("card 1 is this,",card1_color);
-            card1_isclicked = true;
-            
-        }
-
-        else if(card_2 == null && card1_isclicked === true)
+        currentcard_clicked.classList.add("clicked");
+        card_1 = card_1 || currentcard_clicked;
+        if(currentcard_clicked !== card_1)
         {
-            card_2 = card_clicked;
-            card2_color = card_clicked.classList[0];
-            card_clicked.classList.add("clicked");
-            console.log(card_clicked.classList);
-            console.log("card 2 is this,",card2_color);
-            card2_isclicked = true;
-        }
-        else{
-            console.log("more than 2 cards clicked")
+            card_2 = currentcard_clicked
         }
     }
 
-    if(card1_color && card2_color){
+    if(card_1 && card_2){
+        any_card_clicked = true;
+        let card1_color = card_1.className;
+        let card2_color = card_2.className;
+
         if(card1_color === card2_color){
             console.log("cards have matched");
-            card_1.removeEventListener("click","click", handleCardClick(e));
-            card_2.removeEventListener("click", "click", handleCardClick(e));
+            card_1.removeEventListener("click", handleCardClick(e));
+            card_2.removeEventListener("click", handleCardClick(e));
             card_1 = null;
             card_2 = null;
-
+            any_card_clicked = false;
 
         }
         else{
@@ -124,12 +110,10 @@ function handleCardClick(e){
             card_2.style.background = ""
             card_1.classList.remove("clicked");
             card_2.classList.remove("clicked");
-            card1_isclicked = false;
-            card2_isclicked = false;
+            any_card_clicked = false;
             card_1 = null;
-            card1_color = "";
             card_2 = null;
-            card2_color = "";
+            
             },1000);
         }
     }
