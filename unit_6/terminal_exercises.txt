@@ -1,0 +1,37 @@
+PART 1
+manan@DESKTOP-H1VJ7G0:~$ mkdir first
+manan@DESKTOP-H1VJ7G0:~$ cd first/
+manan@DESKTOP-H1VJ7G0:~/first$ nano person.txt
+manan@DESKTOP-H1VJ7G0:~/first$ ls
+manan@DESKTOP-H1VJ7G0:~/first$ ls
+manan@DESKTOP-H1VJ7G0:~/first$ nano person.txt
+manan@DESKTOP-H1VJ7G0:~/first$ mv person.txt another.txt
+manan@DESKTOP-H1VJ7G0:~/first$ ls
+another.txt
+manan@DESKTOP-H1VJ7G0:~/first$ cp another.txt  copy.txt
+manan@DESKTOP-H1VJ7G0:~/first$ ls
+another.txt  copy.txt
+manan@DESKTOP-H1VJ7G0:~/first$ rm copy.txt
+manan@DESKTOP-H1VJ7G0:~/first$ cd ..
+manan@DESKTOP-H1VJ7G0:~$ cp first/ second
+cp: -r not specified; omitting directory 'first/'
+manan@DESKTOP-H1VJ7G0:~$ cp -r first/ second/
+manan@DESKTOP-H1VJ7G0:~$ ls
+first  second
+manan@DESKTOP-H1VJ7G0:~$ rm -r second/
+manan@DESKTOP-H1VJ7G0:~$ man rm
+manan@DESKTOP-H1VJ7G0:~$ man ls
+manan@DESKTOP-H1VJ7G0:~$
+
+PART 2
+
+1. Man command gives the maunal of a command with all flags and options
+2. In 'ls' command, l gives the files in a list format and a shows hidden files and folders
+3. ctrl + arrow keys(left or right)
+4. ctrl + e
+5. ctrl + a
+6. ctrl + w
+7. shell is a cli that lets you interact with OS and terminal is a software that gives you access to shell
+8 & 9. absolute path is a path that gives you location of a file or folder in the root directory and relative path gives you loation based on your current working directory
+10. flags are options that you can use with a command
+11. r does a recursive removal and f is used for forced removal

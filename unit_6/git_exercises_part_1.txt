@@ -1,0 +1,197 @@
+manan@DESKTOP-H1VJ7G0:~$ mkdir learn_git_again
+manan@DESKTOP-H1VJ7G0:~$ cd learn_git_again/
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ touch third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git init
+Initialized empty Git repository in /home/manan/learn_git_again/.git/
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git add third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "addinf third.txt"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <manan@DESKTOP-H1VJ7G0.localdomain>) not allowed
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config user.email mananpandya009@gmail.com
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config user.name manan
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "addinf third.txt"
+[master (root-commit) 159c3fc] addinf third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ touch fourth.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git add fourth.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "adding fourth.txt"
+[master abc320c] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ rm third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    third.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git add .
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "removing third.txt"
+[master a5f1b3a] removing third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git log
+commit a5f1b3a285b0a2a34bcf37c6b3fab4c6c235815b (HEAD -> master)
+Author: manan <mananpandya009@gmail.com>
+Date:   Mon Nov 15 13:19:53 2021 -0600
+
+    removing third.txt
+
+commit abc320c999d61fb6da41378c02e50e6a64f0a6e6
+Author: manan <mananpandya009@gmail.com>
+Date:   Mon Nov 15 13:19:03 2021 -0600
+
+    adding fourth.txt
+
+commit 159c3fc8ca99d94a98f8585c26e990f8a9d56036
+Author: manan <mananpandya009@gmail.com>
+Date:   Mon Nov 15 13:18:32 2021 -0600
+
+    addinf third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config --global core.pager cat
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config --global --get-all
+error: wrong number of arguments, should be from 1 to 2
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config --get-all
+error: wrong number of arguments, should be from 1 to 2
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config --global ?
+error: key does not contain a section: ?
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git config --global --list
+core.pager=cat
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$

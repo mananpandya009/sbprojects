@@ -1,0 +1,93 @@
+What git command creates a branch?
+git checkout -b “branchname”
+
+
+
+What is the difference between a fast-forward and recursive merge?
+fastforward merge is when there is a straight path form the current branch to the main target branch
+
+recursive mergeis the default merge method which tracks all kind of changes to our repo
+
+
+
+What git command changes to another branch?
+git checkout [branchname]
+
+
+
+What git command deletes a branch?
+git branch -d [branch]
+
+How do merge conflicts happen?
+if we try to merge in files from a different branch into our target branch, if the target branch already has those files it will cause a merge conflict
+
+
+
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git branch
+  addcss
+  master
+* raddcss
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git status
+On branch raddcss
+nothing to commit, working tree clean
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ touch test.html
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git status
+On branch raddcss
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git add test.html
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "added file to raddcss branch"
+[raddcss c3f031b] added file to raddcss branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.html
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git checkout master
+Switched to branch 'master'
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git log --oneline
+a5f1b3a (HEAD -> master, addcss) removing third.txt
+abc320c adding fourth.txt
+159c3fc addinf third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git merge raddcss
+Updating a5f1b3a..c3f031b
+Fast-forward
+ test.html | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.html
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git log --oneline
+c3f031b (HEAD -> master, raddcss) added file to raddcss branch
+a5f1b3a (addcss) removing third.txt
+abc320c adding fourth.txt
+159c3fc addinf third.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git status
+On branch master
+nothing to commit, working tree clean
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ touch conflict.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        conflict.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git add conflict.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "master conflict"
+[master ea1ff08] master conflict
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 conflict.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git checkout raddcss
+Switched to branch 'raddcss'
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ touch conflict.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git add conflict.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git commit -m "raddcss conflict"
+[raddcss a01fa0a] raddcss conflict
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 conflict.txt
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git checkout master
+Switched to branch 'master'
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git merge raddcss
+Merge made by the 'recursive' strategy.
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$ git merge raddcss
+Already up to date.
+manan@DESKTOP-H1VJ7G0:~/learn_git_again$
