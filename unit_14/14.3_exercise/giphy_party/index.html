@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giphy Party</title>
+    <link rel="icon" type="image/png" href="popeye.png">
+    <link rel="stylesheet" href="giphy_style.css">
+</head>
+<body>
+        
+    <div id="gif_navbar" class="navbar">
+        <h2><span>
+            GIPHY PARTY
+        </span></h2></div>
+        <div id="gif_input" class="gif_input_div">
+
+            <label>SEARCH TERM&nbsp;</label>
+            <input type="text" id="search_text" placeholder="Enter a search term" onfocus="this.value=''"><br>
+            <button type="submit" id="gif_submit_btn"> SEARCH GIF!!</button>
+
+
+        </div>
+        
+        <div id="gif_container" class="gif_output_container">
+            
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.js"></script>
+        <script src="giphy_app.js"></script>
+        
+    </div>
+</body>
+</html>
