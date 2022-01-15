@@ -1,0 +1,66 @@
+body {
+    height: 100vh;
+    background-color: rgb(11, 30, 51);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .letter {
+    transition: color 1000ms;
+  }
+  
+label{
+    width: 240px;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+    color: ivory;
+    margin-bottom: 10px;
+}
+
+input{
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    width: 240px;
+    margin-bottom: 10px;
+}
+  
+button{
+  height: 35px;
+  background-color: cornflowerblue;
+  width: 200px;
+  font-size: 20px; 
+  font-family: Andale Mono, monospace;
+}
+
+.navbar {
+      font-size: 40px;
+      color: rgb(179 98 28);
+      margin: 0px;
+      position: relative;
+      text-align: center;
+      background-color: rgb(47 47 48);
+}
+  
+h2{
+     margin-top: 10px;
+      margin-bottom: 50px;
+  }
+  
+.madlib_form_div{
+
+    background-color: darkolivegreen;
+    text-align: center;
+    border: 10px;
+    border-color: bisque;
+}
+
+
+.madlib_story_div{
+  background-color: darkolivegreen;
+    text-align: center;
+    border: 10px;
+    border-color: bisque;
+    color: azure;
+    font-weight: 600;
+}

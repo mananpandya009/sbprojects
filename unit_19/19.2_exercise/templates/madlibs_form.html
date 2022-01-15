@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} MADLIBS ULTRA {%endblock%}
+
+{% block content %}
+<div id="madlib_form" class="madlib_form_div">
+    <form action="/story">
+        <label for="place">Place&nbsp;</label>
+        <input type="text" name="place" id="place" placeholder="Enter place"><br>
+        <label for="noun">Noun&nbsp;</label>
+        <input type="text" name="noun" id="noun" placeholder="Enter noun"><br>
+        <label for="place">Verb&nbsp;</label>
+        
+        <input type="text" name="verb" id="verb" placeholder="Enter verb"><br>
+        <label for="place">Adjective&nbsp;</label>
+        <input type="text" name="adjective" id="adjective" placeholder="Enter adjective"><br>
+        <label for="place">Plural Noun&nbsp;</label>
+        <input type="text" name="plural_noun" id="plural_noun" placeholder="Enter plural noun"><br>
+        <button id="madlib_btn">Submit!</button>
+    </form>
+</div>
+
+
+{%endblock%}

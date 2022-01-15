@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} STORY {%endblock%}
+
+{% block content %}
+<div id="madlib_story" class="madlib_story_div">
+    {% if not story_text.startswith("Sorry one of the")%}
+    <p>Here is your story!!!</p>
+    <p>"{{ story_text }}"</p>
+    
+    {%else%}
+    <p>"{{ story_text }}"</p>
+    {%endif%}
+    <a href="/"><button>Make Another</button></a>
+</div>
+
+{%endblock%}
