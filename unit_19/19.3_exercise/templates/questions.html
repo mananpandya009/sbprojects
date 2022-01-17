@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %} SURVEY PANDA {%endblock%}
+
+{% block content %}
+<div id="survey_start" class="survey_start_div">
+   <h2>QUESTION</h2>
+   {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+   <form action="/answers" method="POST">
+        <P>{{ question }}</P>
+        <input type="radio" id="choice1" name="choice" value={{choices[0]}}>
+        <label for="choice1">{{choices[0]}}&nbsp;</label>
+        <input type="radio" id="choice2" name="choice" value={{choices[1]}}>
+        <label for="choice1">{{choices[1]}}</label><br>
+        <button>SUBMIT ANSWER</button>
+   </form>
+
+</div>
+
+
+{%endblock%}
