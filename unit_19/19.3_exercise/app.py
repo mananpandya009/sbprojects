@@ -11,7 +11,8 @@ from surveys import Question, Survey
 app = Flask(__name__)
 retake_survey = False
 app.config['SECRET_KEY'] = "yoyo"
-responses = []
+satisfaction_responses = []
+personality_responses = []
 question_number = 0
 #debug = DebugToolbarExtension(app)
 
@@ -27,11 +28,24 @@ satisfaction_survey = Survey(
         Question("Are you likely to shop here again?"),
     ])
 
-
+personality_quiz = Survey(
+    "Rithm Personality Test",
+    "Learn more about yourself with our personality quiz!",
+    [
+        Question("Do you ever dream about code?"),
+        Question("Do you ever have nightmares about code?"),
+        Question("Do you prefer porcupines or hedgehogs?",
+                 ["Porcupines", "Hedgehogs"]),
+        Question("Which is the worst function name, and why?",
+                 ["do_stuff()", "run_me()", "wtf()"],
+                 allow_text=True),
+    ]
+)
 
 @app.route('/initiate', methods=["POST"])
 def initiate_session():
-    session['responses'] = []
+    session['satisfaction_responses'] = []
+    session['personality_responses'] = []
     return redirect('/questions/0')
 
 

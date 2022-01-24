@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="start_game_div" class="start_game_div">
+    <form action="/init" method="POST">
+        <P>Hello there! Please enter your name to start the game!!</P><br>
+        <label for="username">UserName&nbsp;</label><br>
+        <input type="text" id="username" name="username"><br>
+        <button id="submit_user">Start Game!</button>
+   </form>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="game_player_banner">
+    <p id="user_banner">USER: {{ username.upper() }}  |  SCORE: {{ score }}</p>
+    <p id="game_updates">Lets fish for some words!!</p>
+</div>
+<div id="game_table" class="game_table_div">
+
+    <table id="board">
+        {% for x in range(0,5) %}
+        <tr>
+            {% for letter in board[x] %}
+                <td>
+                    {{ letter }}
+                </td>
+                {% endfor %}    
+        </tr>
+        {% endfor %} 
+    </table>
+
+    <br>
+    <form action="">
+        <label for="guess">Enter your guess here:</label><br>
+        <input type="text" id="guess" name="guess"><br>
+        <button type="submit" id="submit_guess">SUBMIT GUESS</button>
+
+    </form>
+        <script src="/static/process_guess.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.js"></script>
+
+</div>
+
+
+
+{%endblock%}

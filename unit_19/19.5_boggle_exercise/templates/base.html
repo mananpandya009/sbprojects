@@ -1,0 +1,22 @@
+<!doctype html>
+<head>
+  <title>Boggle</title>
+  <link href="/static/boggle.css" rel="stylesheet">
+     <link rel="icon" type="image/png" href="popeye.png">
+</head>
+<body>
+  <div id="game_navbar" class="navbar">
+    <h2><span class= "letter">
+        BOGGLE! - LETS PLAY
+    </span></h2>
+</div>
+<div class="game_container">
+    {% block content %}
+    {% endblock %}
+</div>
+
+
+<script src="/static/boggle.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.js"></script>
+</body>
+</html>
