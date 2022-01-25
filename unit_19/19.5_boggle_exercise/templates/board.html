@@ -6,11 +6,11 @@
     <p id="game_updates">Lets fish for some words!!</p>
 </div>
 <div id="game_table" class="game_table_div">
-
+<!-- x=row, y=col -->
     <table id="board">
-        {% for x in range(0,5) %}
+        {% for x in board %}
         <tr>
-            {% for letter in board[x] %}
+            {% for y in board[x] %}
                 <td>
                     {{ letter }}
                 </td>

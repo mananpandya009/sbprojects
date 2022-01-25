@@ -1,0 +1,91 @@
+
+body {
+    height: 100vh;
+    background-color: rgb(11, 30, 51);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+.letter {
+  transition: color 1000ms;
+}
+
+.navbar {
+    font-size: 40px;
+    color: rgb(179 98 28);
+    margin: 0px;
+    position: relative;
+    text-align: center;
+    background-color: rgb(47 47 48);
+}
+
+h2{
+   margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+
+.container{
+  position: relative;
+  text-align: center;
+}
+
+.results_div {
+  color: antiquewhite;
+  font-size: large;
+  font-weight: bold;
+}
+
+.input_form_div{
+  color: antiquewhite;
+}
+
+
+
+button{
+  margin-top: 20px;
+  color: honeydew;
+  background-color: #f5ac3b;
+  height: 50px;
+  font-size: large;
+  font-weight: bold;
+  vertical-align: middle;
+}
+input{
+  margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 100;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 200px;
+    height: 20pt;
+    left: 50%;
+    vertical-align: middle;
+}
+label{
+    font-size: 20px;
+    width: 150px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+
+
+.messages_container{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 20%);
+}
+
+.messages p {
+    text-align: center;
+    color: antiquewhite;
+	padding:0px;
+	font-size: 20px;
+	border-radius: 1rem;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    width: 500px;
+}
+
+.messages .error {
+	background-color: rebeccapurple;
+}

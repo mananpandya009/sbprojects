@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="input_form_div" class="input_form_div">
+    <form action="/validate" method="POST">
+        <p style="font-size: 20px">*** Hello there! Please enter currency data! ***</p><br>
+        <label for="from_currency">Converting From:&nbsp;</label><br>
+        <input type="text" id="from_currency" name="from_currency" onfocus="this.value=''"><br>
+        <label for="to_currency">Converting To:&nbsp;</label><br>
+        <input type="text" id="to_currency" name="to_currency" onfocus="this.value=''"><br>
+        <label for="amount">Amount:&nbsp;</label><br>
+        <input type="number" id="amount" name="amount" onfocus="this.value=''"><br>
+        <button id="convert_btn" type="submit">Convert</button>
+   </form>
+</div>
+<div id="results" class="results_div">
+    <p id="msg">{{ result_markup }}</p>
+    <a href="/"><button id="reset">RESET</button></a>
+</div>
+<div class="messages_container">
+    <main id="content">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <section class="messages">
+                    {% for category,msg in messages %}
+                        <p class="{{category}}">{{msg}}</p>
+                    {% endfor  %}
+                </section>
+            {% endif %}
+        {% endwith %}
+    </main>
+</div>
+
+
+
+{%endblock%}
