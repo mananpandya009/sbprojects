@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="input_form_div" class="input_form_div">
+    <form action="/users/{{user_id}}/posts/new" method="POST">
+        <p style="font-size: 20px">Hello there! Please enter the post details</p><br>
+        <label for="title">Title:&nbsp;</label><br>
+        <input type="text" id="title" name="title" onfocus="this.value=''"><br>
+
+        <label for="content">Content:&nbsp;</label><br>
+        <input type="text" id="content" name="content" onfocus="this.value=''" style="width: 400px;height: 50pt;font-size: 15px;"><br>
+
+        <button id="add_user" type="submit">Save Post</button>
+   </form>
+</div>
+<div id="results" class="results_div">
+    <a href="/{{user_id}}"><button id="reset">Cancel</button></a>
+</div>
+
+{%endblock%}

@@ -15,8 +15,31 @@ body {
     margin: 0px;
     position: relative;
     text-align: center;
-    background-color: rgb(47 47 48);
+    background-color: #232e36;
 }
+
+a:link {
+  color: rgb(222, 228, 143);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(185, 96, 151);
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(38, 63, 206);
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+
 
 h2{
    margin-top: 10px;
@@ -37,6 +60,7 @@ h2{
 
 
 button{
+  position: relative;
   margin-top: 20px;
   color: honeydew;
   background-color: #f5ac3b;
@@ -70,50 +94,86 @@ label{
   box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
 }
 
+
+
 .userlistdiv{
   position: absolute;
   left: 50%;
   transform: translate(-50%, 20%);
   color: antiquewhite;
+  top: -100px;
 }
+
+
+
 
 ul {
   position: relative;
   left: 50%;
   transform: translate(-50%, 20%);
-  background: #aaad87;
+  background: rgb(11, 30, 51);
+
   width:max-content;
-  list-style-type: none;
+  list-style-type: square;
   padding: 0;
   border: 1px solid #ddd;
 }
 
 ul li {
   padding: 8px 16px;
+  text-align: -webkit-left;
+  list-style-type: square;
   border-bottom: 1px solid #ddd;
-
+  overflow: hidden;
+  white-space: normal;
+  width: 650px;
+  height: auto;
+  background-color: #232e36;
+  word-wrap: break-word;
 }
 
-.userlistdiv h1 {
+
+
+
+
+.flex-container {
+  display: flex;
+  background-color: rgb(11, 30, 51);
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: stretch;
+}
+
+.flex-container > div {
+  background-color: #232e36;
+  width: 100px;
+  margin: 10px;
   text-align: center;
-  color: antiquewhite;
-  padding:0px;
-  font-size: 20px;
-  border-radius: 1rem;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-  width: 500px;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  flex-wrap: nowrap;
 }
+.flex-child {
+  flex: 1;
+  max-width: 700px; 
+}  
 
 
-.user_image{
+.post_div{
   position: relative;
-  display: inline-block;
+  display:inline;
 }
 
-.user_image img{
-  width: 250px;
+
+
+
+.user_image_div{
+  position: relative;
+  display:inline;
+}
+
+.user_image_div img{
+  width: 350px;
   height: 300px;
   display: inline-block;
 }

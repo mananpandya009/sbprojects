@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="input_form_div" class="input_form_div">
+    <form action="/posts/{{post.id}}/edit" method="POST">
+        <p style="font-size: 20px">Hello there! Please enter the changes in the post</p><br>
+        <label for="title">Title:&nbsp;</label><br>
+        <input type="text" id="title" name="title" onfocus="this.value=''" placeholder={{post.title}}><br>
+
+        <label for="content">Content:&nbsp;</label><br>
+        <input type="text" id="content" name="content" onfocus="this.value=''" placeholder={{post.content}}><br>
+
+        <button id="save_post" type="submit">Save</button>
+   </form>
+</div>
+<div id="results" class="results_div">
+    <a href="/{{post.user_id}}"><button id="reset">Cancel</button></a>
+</div>
+
+{%endblock%}

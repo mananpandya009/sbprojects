@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block content %}
+  
+
+<div class="post_details_div">
+    <h2>{{post.title}}</h2>
+    <p>{{post.content}}</p> <br>
+    <p>By {{author}}</p>
+
+    <a href="/posts/{{post.id}}/delete"><button id="delete_post">Delete</button></a>
+    <a href="/posts/{{post.id}}/edit"><button id="edit_post">Edit</button></a>
+    <a href="/{{post.user_id}}"><button id="cancel">Cancel</button></a>
+
+</div>
+
+
+
+
+
+
+{%endblock%}
