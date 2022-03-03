@@ -7,16 +7,18 @@
     <h2>{{post.title}}</h2>
     <p>{{post.content}}</p> <br>
     <p>By {{author}}</p>
+    <div class="tags_list_div">
+        <p style="background-color: rgb(11, 30, 51);">Tags:</p>
+            {% for tag in tags %}
+            <p><a href="/tags/{{tag.id}}">{{tag.name}}</a></p>
+            {% endfor %}
+    </div><br>
+
 
     <a href="/posts/{{post.id}}/delete"><button id="delete_post">Delete</button></a>
     <a href="/posts/{{post.id}}/edit"><button id="edit_post">Edit</button></a>
     <a href="/{{post.user_id}}"><button id="cancel">Cancel</button></a>
-
 </div>
-
-
-
-
 
 
 {%endblock%}

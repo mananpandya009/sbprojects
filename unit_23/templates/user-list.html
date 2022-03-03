@@ -2,14 +2,16 @@
 {% block content %}
 
 <div class="userlistdiv">
-  <h1 style="top: 10px">USERS</h1>
 
+  <h1 style="top: 10px">Bloggers</h1>
+  <a href="/users/new"><button>Add User</button></a>
+  <a href="/tags"><button>View Tags</button></a>
   <ul>
     {% for user in users %}
     <li><a href="/{{user.id}}">{{user.first_name}}&nbsp;{{user.last_name}}</a></li>
     {% endfor %}
   </ul>
-  <a href="/users/new"><button>Add User</button></a>
+
 
 
 </div>

@@ -1,0 +1,29 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="input_form_div" class="input_form_div">
+    <form action="/tags/{{tag.id}}/edit" method="POST">
+        <p style="font-size: 20px">Hello there! Please enter the new tag name</p><br>
+        <label for="tagname">Name:&nbsp;</label><br>
+        <input type="text" id="tagname" name="tagname" onfocus="this.value=''" placeholder={{tag.name}}><br>
+        <div class="post_input_checkbox_div">
+            <h2 style="margin-bottom: 10px;">POSTS</h2>
+            {% for post in posts %}
+                {% if post in tagged_posts %} 
+                    <label for="post">{{post.title}} <input type="checkbox" name=post value={{post.id}} checked></label><br>
+                {% else %}
+                    <label for="post">{{post.title}} <input type="checkbox" name=post value={{post.id}}></label><br>
+                {%endif%}
+            {% endfor %}
+        </div>
+
+        <button id="add_user" type="submit">Save</button>
+   </form>
+</div>
+<div id="results" class="results_div">
+    <a href="/tags"><button id="reset">Cancel</button></a>
+</div>
+
+{%endblock%}

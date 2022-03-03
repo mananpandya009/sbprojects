@@ -24,7 +24,7 @@ a:link {
   text-decoration: none;
 }
 a:visited {
-  color: rgb(185, 96, 151);
+  color: rgb(208, 161, 252);
   background-color: transparent;
   text-decoration: none;
 }
@@ -112,12 +112,12 @@ ul {
   left: 50%;
   transform: translate(-50%, 20%);
   background: rgb(11, 30, 51);
-
   width:max-content;
   list-style-type: square;
   padding: 0;
   border: 1px solid #ddd;
 }
+
 
 ul li {
   padding: 8px 16px;
@@ -132,8 +132,39 @@ ul li {
   word-wrap: break-word;
 }
 
+#ul_tags_list li {
+  display: inline;
+}
 
 
+.tags_list_div{
+  display: inline;
+
+}
+
+.tags_list_div p {
+
+  background-color: cornflowerblue;
+  color: antiquewhite;  
+  display: inline;
+  font-weight:bold ;
+}
+
+.tag_input_checkbox_div{
+
+text-align: center;
+position: relative;
+left: 50%;
+transform: translate(-50%, 20%);
+}
+
+.form-control {
+  display: grid;
+
+  grid-template-columns: 0.5em auto;
+  line-height: 1.1;
+  vertical-align: middle;
+}
 
 
 .flex-container {
@@ -157,6 +188,7 @@ ul li {
   flex: 1;
   max-width: 700px; 
 }  
+
 
 
 .post_div{

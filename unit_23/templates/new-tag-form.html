@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="input_form_div" class="input_form_div">
+    <form action="/tags/new" method="POST">
+        <p style="font-size: 20px">Hello there! Please enter the tag name</p><br>
+        <label for="tagname">Name:&nbsp;</label><br>
+        <input type="text" id="tagname" name="tagname" onfocus="this.value=''"><br>
+
+
+        <button id="add_user" type="submit">Save</button>
+   </form>
+</div>
+<div id="results" class="results_div">
+    <a href="/{{user_id}}"><button id="reset">Cancel</button></a>
+</div>
+
+{%endblock%}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+  <div class="userlistdiv">  
+  <div class="tag_div flex-child">
+      <div class="post-header">
+        <h1>Blogger Tags</h1>
+        <a href="/tags/new"><button>Add Tag</button></a>
+        <a href="/users"><button>Home</button></a>
+      </div>
+      <div class="tag_list">
+        <ul>
+        {% for tag in tags %}
+        <li><a href="/tags/{{tag.id}}">{{tag.name}}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+    </div>  
+
+{%endblock%}

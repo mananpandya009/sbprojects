@@ -30,7 +30,44 @@ class Post(db.Model):
     created_at = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer,db.ForeignKey('users.id', ondelete='CASCADE'))
     user = db.relationship( 'User', backref='posts')
+    # direct navigation: post -> tag & back
+    exit
+    tags = db.relationship('Tag',secondary='posttags',backref='posts')
+    tagposts = db.relationship( 'PostTag', backref='posts')
+
 
     def __repr__(self):
         post = self
         return f"<post_id={post.id} post_title={post.title} post-content={post.content} created_at={post.created_at}>"
+
+   
+
+
+class Tag(db.Model):
+    __tablename__ = 'tags'
+
+    id = db.Column(db.Integer,primary_key=True, autoincrement=True)
+    name = db.Column(db.Text, nullable=False)
+    # direct navigation: tag -> posttag & back
+    tag_post = db.relationship( 'PostTag', backref='tags')
+    def __repr__(self):
+        tag = self
+        return f"<tag_id={tag.id} tagname={tag.name}>"
+    
+
+
+
+
+class PostTag(db.Model):
+    __tablename__ = 'posttags'
+
+    post_id = db.Column(db.Integer,db.ForeignKey('posts.id', ondelete='CASCADE'),primary_key=True)
+    tag_id = db.Column(db.Integer,db.ForeignKey('tags.id', ondelete='CASCADE'),primary_key=True)  
+    
+    def __repr__(self):
+        post = self
+        return f"<post_id={post.id} post_title={post.title} post-content={post.content} created_at={post.created_at}>"
+
+
+
+

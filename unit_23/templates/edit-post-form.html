@@ -10,7 +10,15 @@
 
         <label for="content">Content:&nbsp;</label><br>
         <input type="text" id="content" name="content" onfocus="this.value=''" placeholder={{post.content}}><br>
-
+        <div class="tag_input_checkbox_div">
+            {% for tag in tags %}
+                {% if tag in tags_used %} 
+                    <label for="tagname" class ="form-control">{{tag.name}} <input type="checkbox" name=tagname value={{tag.id}} checked></label><br>
+                {% else %}
+                    <label for="tagname" class ="form-control">{{tag.name}} <input type="checkbox" name=tagname value={{tag.id}}></label><br>
+                {%endif%}
+            {% endfor %}
+        </div>
         <button id="save_post" type="submit">Save</button>
    </form>
 </div>
