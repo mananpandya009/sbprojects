@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+<div class="container mt-5">
+  <div class="row">
+    {% for pet in pets %}
+    <div class="col-sm-3">
+    <h3>{{pet.name}}</h3>
+    <a href="/{{pet.id}}">
+    <img src={{pet.photo_url}} alt={{pet.name}} class="img-thumbnail"> </a>
+    {% if pet.available == True %}
+      {% if pet.species == 'cat' %}
+      <p>Meoww hooman, I am available!</p>
+      {% else %}
+      <p>Woof, hooman, I am available!</p>
+      {%endif%}
+    {% else %}
+      {% if pet.species == 'cat' %}
+      <p>Meoww, I ll be back soon :(</p>
+      {% else %}
+      <p>Woof,I ll be back soon :</p>
+      {%endif%}
+    {%endif%}
+    </div>
+    {% endfor %}
+  </div>
+  <a href="/add"><button type="button" class="btn btn-warning">Add Pet</button></a>
+  
+</div>
+
+{% endblock %}

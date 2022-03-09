@@ -5,6 +5,7 @@ from app import app
 db.drop_all()
 db.create_all()
 
+
 #adding users in the table User
 user1 = User(first_name='Black', last_name="Panther", image_url="https://tinyurl.com/2p855svz")
 user2 = User(first_name='Iron', last_name="Man", image_url="https://tinyurl.com/599mujsv")

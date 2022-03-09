@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+  
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>{{pet.name}}</h3>
+            <a href="/pet/{{pet.id}}">
+            <img src={{pet.photo_url}} alt={{pet.name}} class="img-thumbnail"> </a>
+        </div>
+        <div class="col-sm-6">
+            {% if pet.available == True %}
+            <p>Woof hooman, I am available!</p>
+            {% else %}
+            <p>Woof, I ll be back soon :(</p>
+            {%endif%}
+            <p>Species: {{pet.species}}</p>
+            <p>Age: {{pet.age}}</p>
+            <p>Notes: {{pet.notes}}</p>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                {% for field in form if field.widget.input_type != 'hidden'%}
+                    <div class="form-group">
+                        {{field.label}}
+                        {{field(class_="form-control")}}
+                        
+                        {% for err in field.errors %}
+                        <small class="form-text text-danger">
+                        {{err}}
+                        </small>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <br>
+                <button class="btn  btn-success  btn-lg">Submit Changes</button>
+                <a href="/pets" class="btn btn-danger btn-lg">Go Back</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
